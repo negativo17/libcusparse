@@ -35,6 +35,9 @@ solver.
 Summary:        Development files for NVIDIA CUDA Sparse Matrix (cuSPARSE) library
 Requires:       %{name}%{_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 Conflicts:      %{name}-devel-%{major_package_version} < %{?epoch:%{epoch}:}%{version}
+# Drop in 11.7:
+Provides:       cuda-cusparse-devel = %{?epoch:%{epoch}:}%{version}-%{release}
+Obsoletes:      cuda-cusparse-devel < %{?epoch:%{epoch}:}%{version}-%{release}
 
 %description devel
 This package provides development files for the NVIDIA CUDA Sparse Matrix
@@ -43,6 +46,9 @@ library (cuSPARSE) library.
 %package static
 Summary:        Static libraries for NVIDIA CUDA Sparse Matrix (cuSPARSE)
 Requires:       %{name}-devel%{_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
+# Drop in 11.7:
+Provides:       cuda-cusparse-static = %{?epoch:%{epoch}:}%{version}-%{release}
+Obsoletes:      cuda-cusparse-static < %{?epoch:%{epoch}:}%{version}-%{release}
 
 %description static
 This package contains static libraries for NVIDIA CUDA Sparse Matrix (cuSPARSE).
