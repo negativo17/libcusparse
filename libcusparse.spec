@@ -7,7 +7,7 @@
 Name:           libcusparse
 Epoch:          1
 Version:        12.3.0.142
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        NVIDIA CUDA Sparse Matrix library (cuSPARSE) library
 License:        CUDA Toolkit
 URL:            https://developer.nvidia.com/cuda-toolkit
@@ -75,7 +75,9 @@ sed -i \
 %{_libdir}/libcusparse.so.*
 
 %files devel
+%ifarch x86_64
 %doc src
+%endif
 %{_includedir}/cusparse.h
 %{_includedir}/cusparse_v2.h
 %{_libdir}/libcusparse.so
@@ -85,6 +87,9 @@ sed -i \
 %{_libdir}/libcusparse_static.a
 
 %changelog
+* Mon Mar 18 2024 Simone Caronni <negativo17@gmail.com> - 1:12.3.0.142-2
+- Fix build on aarch64.
+
 * Tue Mar 12 2024 Simone Caronni <negativo17@gmail.com> - 1:12.3.0.142-1
 - Update to 12.3.0.142.
 - Drop ppc64le.
