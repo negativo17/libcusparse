@@ -6,7 +6,7 @@
 
 Name:           libcusparse
 Epoch:          1
-Version:        12.6.2.49
+Version:        12.6.3.3
 Release:        1%{?dist}
 Summary:        NVIDIA CUDA Sparse Matrix library (cuSPARSE) library
 License:        CUDA Toolkit
@@ -84,6 +84,9 @@ sed -i \
 %{_libdir}/libcusparse_static.a
 
 %changelog
+* Sun Oct 26 2025 Simone Caronni <negativo17@gmail.com> - 1:12.6.3.3-1
+- Update to 12.6.3.3.
+
 * Mon Aug 25 2025 Simone Caronni <negativo17@gmail.com> - 1:12.6.2.49-1
 - Update to 12.6.2.49.
 
